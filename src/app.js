@@ -1,19 +1,16 @@
 require("dotenv").config();
 const express = require("express");
+const connectToDB = require("./config/database");
 
 const app = express();
-app.get("/", (req, res) => {
-  res.send("hii hello");
-});
 
-app.get("/hello", (req, res) => {
-  res.send("hello");
-});
-
-app.use("/test", (req, res) => {
-  res.send("hello from test");
-});
-
-app.listen(process.env.PORT, () => {
-  console.log(`App is running on port ${process.env.PORT}`);
-});
+connectToDB()
+  .then(() => {
+    console.log("DB connection established");
+    app.listen(process.env.PORT, () => {
+      console.log(`App is running on port ${process.env.PORT}`);
+    });
+  })
+  .catch((e) => {
+    console.log("DB connection failed: " + e.message);
+  });
