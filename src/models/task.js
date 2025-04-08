@@ -20,6 +20,7 @@ const taskSchema = new mongoose.Schema(
         message: `{VALUE} is not valid`,
       },
       required: true,
+      default: "pending",
     },
   },
   {
