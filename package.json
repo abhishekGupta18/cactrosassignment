@@ -1,0 +1,18 @@
+{
+  "name": "cactroassignment",
+  "version": "1.0.0",
+  "description": "cactro fullstack assignment",
+  "license": "ISC",
+  "author": "Abhishek Gupta",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  }
+}
