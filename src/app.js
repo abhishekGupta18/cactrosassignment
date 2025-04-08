@@ -4,6 +4,10 @@ const connectToDB = require("./config/database");
 
 const app = express();
 
+app.use((req, res) => {
+  res.send("hello");
+});
+
 connectToDB()
   .then(() => {
     console.log("DB connection established");
