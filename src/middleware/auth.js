@@ -4,7 +4,7 @@ const Client = require("../models/client");
 
 const clientAuth = async (req, res, next) => {
   try {
-    const { token } = reqcookies;
+    const { token } = req.cookies;
     if (!token) {
       return res.status(401).send("please login");
     }
